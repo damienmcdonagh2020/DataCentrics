@@ -1,0 +1,42 @@
+<body>
+    <h1>Edit Employee</h1>
+
+    <ul>
+        <li>Employee ID is NOT editable!</li>
+        <li>Name MUST be 5 Characters.</li>
+        <li>Salary MAY NOT be less than 1.</li>
+        <li>Role SHOULD be Manager or Employee.</li>
+    </ul>
+
+</body>
+<form href="http://localhost:3004/employees/edit/<%= updateEmployee[0].eid %>" method="POST">
+    <b><label> EID:</label></b>
+    <input type="text" readonly="true" name="eid" value="<%= updateEmployee[0].eid%>" required></input>
+    <br>
+    <b><label>Name:</label></b>
+    <input type="text" name="ename" value="<%= updateEmployee[0].ename %>" minlength="5" required></input>
+    <br>
+    <b><label for="role">Role:</label></b>
+    <select id="role" name="role" required>
+        <option value="<%= updateEmployee[0].role %>"><%= updateEmployee[0].role %></option>
+        <option value="Manager">Manager</option>
+        <option value="Employee">Employee</option>
+    </select>
+    <br>
+    <b><label>Salary:</label></b>
+    <input type="number" name="salary" value="<%= updateEmployee[0].salary %>" min="1" step=".01" required></input>
+    <input type="submit" value="Update">
+</form>
+
+<p></p>
+<button onclick="window.location.href='http://localhost:3004/';">
+    Home
+</button>
+<p></p>
+<button onclick="window.location.href='http://localhost:3004/employees';">
+    Employees
+</button>
+<p></p>
+<button onclick="window.location.href='http://localhost:3004/department';">
+    Deparment
+</button>

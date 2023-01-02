@@ -1,0 +1,47 @@
+<table>
+    <h1>Departments</h1>
+    
+    <p></p>
+    <th>Department ID</th>
+    <th>Name</th>
+    <th>Location</th>
+    <th>Budget</th>
+    <th>Delete</th>
+
+    </tr>
+    <!--Loops over all departments and displays them-->
+    <% departmentList.forEach((departmentList)=>
+        { %>
+        <tr>
+            <td>
+                <%= departmentList.did %>
+            </td>
+            <td>
+                <%= departmentList.dname %>
+            </td>
+            <td>
+                <%= departmentList.lid %>
+            </td>
+            <td>
+                <%= departmentList.budget %>
+            </td>
+            <td>
+                <!--Does a get request including department id-->
+                <a href="/department/delete/<%= departmentList.did %>">
+                    <p type="submit">Delete</p>
+                </a>
+          
+        </tr>
+
+        <% }) %>
+</table>
+
+<br>
+<p></p>
+<button onclick="window.location.href='http://localhost:3004/';">
+    Home
+</button>
+<p></p>
+<button onclick="window.location.href='http://localhost:3004/employees';">
+    Employees
+</button>

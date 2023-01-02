@@ -1,0 +1,49 @@
+<table>
+    <h1>Employees</h1>
+
+    <p></p>
+    <th>EID</th>
+    <th>Name</th>
+    <th>Role</th>
+    <th>Salary</th>
+
+</tr>
+<!--Loops over all employees and displays them-->
+<% employeeList.forEach((employeeList)=>
+    { %>
+    <tr>
+        <td>
+            <%= employeeList.eid %>
+        </td>
+        <td>
+            <%= employeeList.ename %>
+        </td>
+        <td>
+            <%= employeeList.role %>
+        </td>
+        <td>
+            <%= employeeList.salary %>
+        </td>
+        <td>
+            <!--Does a get request including employee id-->
+            <a href="/employees/edit/<%= employeeList.eid %>">
+                <p type="submit">Update</p>
+            </a>
+        </td>
+    </tr>
+    <% }) %>
+</table>
+
+<br>
+<p></p>
+<button onclick="window.location.href='http://localhost:3004/';">
+    Home
+</button>
+<p></p>
+<button onclick="window.location.href='http://localhost:3004/department';">
+    Deparment
+</button>
+
+  
+    
+
